@@ -1,0 +1,8 @@
+C3 constructed
+C2 constructed
+C0 constructed
+start main
+end main
+C0 destructed
+C2 destructed
+C3 destructed

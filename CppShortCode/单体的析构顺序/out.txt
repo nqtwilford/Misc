@@ -1,0 +1,10 @@
+C1 constructed
+C2 constructed
+start main
+end main
+C2 destructed
+Call C1
+C1::f()
+C1 destructed
+Call C2
+C2::f()

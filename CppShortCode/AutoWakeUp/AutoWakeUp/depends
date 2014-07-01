@@ -1,0 +1,2 @@
+AutoWakeUp.o: AutoWakeUp.cpp EpLuaScriptEngine.h
+EpLuaScriptEngine.o: EpLuaScriptEngine.cpp EpLuaScriptEngine.h

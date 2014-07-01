@@ -1,0 +1,47 @@
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+
+"My options---------------------------------------
+set number			"always show line number
+set ruler			"show line number and column number in the right-bottom corner
+set cindent shiftwidth=4	"indent width
+set tabstop=4		"tabstop is 4
+set guioptions-=T	"close toolbar
+set guioptions-=m	"close menubar
+set guifont=Consolas:h12:cANSI	"font:Consolas height:12
+set cursorline		"highlight cursor line
+"set cursorcolumn	"highlight cursor column
+set visualbell		"flash the window instead of alert sound
+set incsearch		"enable incrimental search
+set nobackup		"dont backup
+set autochdir		"auto change working dir
+syntax on			"enable syntax highlight
+colo desert			"evening theme
+autocmd GUIEnter * simalt ~X	"auto maximize
