@@ -111,7 +111,7 @@ public:
 			delete _ref;
 		}
 	}
-private:
+//private:
 	//void destroy()
 	//{
 	//	delete _object;
@@ -163,7 +163,7 @@ my_shared_ptr<T> dynamic_ptr_cast(const my_shared_ptr<U> &value)
 }
 //static_cast const_castÕ¨¿Ì
 
-#include "boost/shared_ptr.hpp"
+//#include "boost/shared_ptr.hpp"
 //#define sptr std::shared_ptr
 #define sptr my_shared_ptr
 //#define sptr boost::shared_ptr
