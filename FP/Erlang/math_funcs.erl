@@ -20,5 +20,4 @@ split([], Odds, Evens) ->
 	{lists:reverse(Odds), lists:reverse(Evens)}.
 
 split1(L) ->
-	{filter(fun(X) -> odd(X) end, L), 
-	 filter(fun(X) -> even(X) end, L)}.
+	{filter(fun odd/1, L), filter(fun even/1, L)}.
