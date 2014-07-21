@@ -45,3 +45,7 @@ set autochdir		"auto change working dir
 syntax on			"enable syntax highlight
 colo desert			"evening theme
 autocmd GUIEnter * simalt ~X	"auto maximize
+"set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936
+set fileencoding=gb2312
+set termencoding=utf-8
