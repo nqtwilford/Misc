@@ -1,4 +1,5 @@
 *.swp
 *.beam
+*.dump
 build
 build*
