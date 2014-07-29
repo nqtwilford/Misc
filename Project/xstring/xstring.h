@@ -12,7 +12,7 @@
 #define _T(X) X
 #endif
 
-static const char mask[6] = {
+static const char masks[6] = {
 	(char)0x80, //10000000
 	(char)0xE0, //11100000
 	(char)0xF0, //11110000
@@ -21,20 +21,12 @@ static const char mask[6] = {
 	(char)0xFE, //11111110
 };
 
-static const char ref[6] = {
-	(char)0x00, //00000000
-	(char)0xC0, //11000000
-	(char)0xE0, //11100000
-	(char)0xF0, //11110000
-	(char)0xF8, //11111000 
-	(char)0xFC, //11111100
-};
-
 size_t getByteNum(char byte)
 {
 	for(size_t i = 0; i < 6; ++i)
 	{
-		if((byte & mask[i]) == ref[i])
+		char mask = masks[i];
+		if((byte & mask) == (char)(mask<<1))
 		{
 			return i + 1;
 		}
@@ -60,7 +52,7 @@ std::wstring utf8ToWString(const char *utf8str)
 			assert(j == 0 || (currByte & 0xC0) == 0x80);
 			size_t shiftNum = j == 0 ? 0 : 6;
 			wchar = wchar << shiftNum;
-			wchar |= currByte & (j == 0 ? ~mask[j] : 0x3F);
+			wchar |= currByte & (j == 0 ? ~masks[j] : 0x3F);
 			printf("j:%d currByte:%02X shiftNum:%d wchar:%04X\n", j, (unsigned char)currByte, shiftNum, (unsigned int)wchar);  
 		}
 		result.push_back(wchar);
