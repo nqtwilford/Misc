@@ -1,5 +1,5 @@
-﻿#include "xstring.h"
-#include <iostream>
+﻿#include <iostream>
+#include "xstring.h"
 using namespace std;
 
 int main()
@@ -20,12 +20,16 @@ int main()
 	*/
 	//*
 	const char *str = "ABC中文123";
+	//const char *str = "中";
 	std::wstring wstr = utf8ToWString(str);
 	//wcout<<wstr<<endl;
-	wprintf(L"%s\n", wstr.c_str());
+	wprintf(L"%ls\n", wstr.c_str());
 	//*/
 	/*std::wstring wstr1 = L"ABC中文123";
 	printf("%ls\n", wstr1.c_str());
 	wprintf(L"%ls\n", wstr1.c_str());*/
+	std::string str1 = wstringToUtf8(wstr);
+	std::wstring wstr1 = utf8ToWString(str1);
+	wprintf(L"%ls\n", wstr1.c_str());
 	return 0;
 }
