@@ -1,0 +1,11 @@
+set nocompatible
+set so=5
+set ignorecase
+set incsearch
+set cindent shiftwidth=4	"indent width
+set tabstop=4		"tabstop is 4
+set expandtab
+set autoindent
+set number
+set backspace=indent,eol,start
+set wrap

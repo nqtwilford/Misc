@@ -33,6 +33,7 @@ set number			"always show line number
 set ruler			"show line number and column number in the right-bottom corner
 set cindent shiftwidth=4	"indent width
 set tabstop=4		"tabstop is 4
+set scrolloff=5
 set guioptions-=T	"close toolbar
 set guioptions-=m	"close menubar
 set guifont=Consolas:h12:cANSI	"font:Consolas height:12
@@ -45,7 +46,40 @@ set autochdir		"auto change working dir
 syntax on			"enable syntax highlight
 colo desert			"evening theme
 autocmd GUIEnter * simalt ~X	"auto maximize
-"set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936
-set fileencoding=gb2312
-set termencoding=utf-8
+
+"encoding settings
+let $LANG = 'en'
+set langmenu=en
+set fileencodings=ucs-bom,utf-8,cp936,utf-16,utf-16le,ucs2be,ucs-2le,latin-1
+set nobomb
+set fileencoding=utf-8
+set encoding=utf-8
+
+"custom command
+:command! -nargs=1 Rn let tpname = expand('%:t') | saveas <args> | edit <args> | call delete(expand(tpname))
+:command! -nargs=0 Min simalt ~N
+:command! -nargs=0 Resize simalt ~R
+:command! -nargs=0 Config :e $vim/_vimrc
+
+"custom hotkey
+nnoremap <C-l> gt
+nnoremap <C-h> gT
+
+"plugin settings
+call pathogen#infect()
+
+nmap <silent> <F3> :NERDTree<cr>
+
+set t_Co=256
+let g:Powerline_symbols = 'fancy'
+
+" 设置winmanager
+" 设置界面分割
+"let g:winManagerWindowLayout = "TagList|FileExplorer"
+let g:winManagerWindowLayout = "FileExplorer"
+"设置winmanager的宽度，默认为25
+let g:winManagerWidth = 30
+"定义打开关闭winmanager快捷键为F8
+nmap <silent> <F8> :WMToggle<cr>
+"在进入vim时自动打开winmanager
+let g:AutoOpenWinManager = 1
