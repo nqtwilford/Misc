@@ -8,7 +8,8 @@ on_exit(Pid, Handler) when is_pid(Pid), is_function(Handler) ->
 					{'DOWN', Ref, process, Pid, Why} ->
 						Handler({Pid, Why})
 				end
-		  end).
+		  end),
+	Pid.
 
 work_proc() ->
 	receive

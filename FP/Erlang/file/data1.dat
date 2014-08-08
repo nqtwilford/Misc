@@ -1,0 +1,5 @@
+{person, "Zhang", "Wei"}.
+{occupation, programmer}.
+{favoriteLanguage, ['C++', 'Lua', 'Erlang']}.
+
+{cat, {name, "zorro"}, {owenr, "Zhang"}}.
