@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+
+<Type Name="CVec2">
+    <DisplayString>({x}, {y})</DisplayString>
+    <Expand>
+        <Item Name="x">x</Item>
+        <Item Name="y">y</Item>
+    </Expand>
+</Type>
+
+<Type Name="CVec3">
+    <DisplayString>({x}, {y}, {z})</DisplayString>
+    <Expand>
+        <Item Name="x">x</Item>
+        <Item Name="y">y</Item>
+        <Item Name="z">z</Item>
+    </Expand>
+</Type>
+
+<Type Name="CVec4">
+    <DisplayString>({x}, {y}, {z}, {w})</DisplayString>
+    <Expand>
+        <Item Name="x">x</Item>
+        <Item Name="y">y</Item>
+        <Item Name="z">z</Item>
+        <Item Name="w">w</Item>
+    </Expand>
+</Type>
+
+<Type Name="CColor">
+	<DisplayString>({*(int*)(this),H})</DisplayString>
+</Type>
+
+</AutoVisualizer>

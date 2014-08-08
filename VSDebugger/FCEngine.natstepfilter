@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StepFilter xmlns="http://schemas.microsoft.com/vstudio/debugger/natstepfilter/2010">
+  <!-- My filter -->
+  <Function><Name>std::.*</Name><Action>NoStepInto</Action></Function>
+  <Function><Name>CVec2::CVec2</Name><Action>NoStepInto</Action></Function>
+  <Function><Name>CVec2::operator.*</Name><Action>NoStepInto</Action></Function>
+  <Function><Name>CVec3::CVec3</Name><Action>NoStepInto</Action></Function>
+  <Function><Name>CVec3::operator.*</Name><Action>NoStepInto</Action></Function>
+  <Function><Name>CColor::CColor</Name><Action>NoStepInto</Action></Function>
+  <Function><Name>CColor::operator.*</Name><Action>NoStepInto</Action></Function>
+  <Function><Name>.*::GetInstance</Name><Action>NoStepInto</Action></Function>
+  <Function><Name>.*::GetInstance</Name><Action>NoStepInto</Action></Function>
+  <Function><Name>SharePtr&lt;.*&gt;::SharePtr.*</Name><Action>NoStepInto</Action></Function>
+</StepFilter>
