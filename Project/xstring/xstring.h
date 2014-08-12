@@ -34,17 +34,6 @@ static const int masksUnicode[6] = {
 	(int)(0xFFFFFFFFu >> (32 - bitNums[5])),
 };
 
-/*
-static const int masksUnicode[6] = {
-	0x0000007F, // 7 bits
-	0x000007FF, // 11 bits 5+6
-	0x0000FFFF, // 16 bits 4+6+6
-	0x001FFFFF, // 21 bits 3+6+6+6
-	0x03FFFFFF, // 26 bits 2+6+6+6+6
-	0x7FFFFFFF, // 31 bits 1+6+6+6+6+6
-};
-*/
-
 size_t getByteNumFromUtf8(char byte)
 {
 	for(size_t i = 0; i < 6; ++i)
